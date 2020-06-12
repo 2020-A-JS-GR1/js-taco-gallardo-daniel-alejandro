@@ -25,3 +25,47 @@ console.log(typeof texto);
 console.log(typeof booleano);
 console.log(typeof hijos);
 console.log(typeof zapatos);
+
+const apellido = 'Taco';
+console.log(typeof apellido);
+
+//TRUTH'ies AND FALS'ies
+if(true == true){
+    console.log('Es verdadero');
+}else{
+    console.log('Es falso');
+}
+
+if(""){
+    console.log('Es verdadero');
+}else{
+    console.log('Es falso');
+}
+
+
+if("Daniel"){
+    console.log('Es verdadero');
+}else{
+    console.log('Es falso');
+}
+
+
+if(-1){
+    console.log('Es verdadero');
+}else{
+    console.log('Es falso');
+}
+
+
+if(0){
+    console.log('Es verdadero');
+}else{
+    console.log('Es falso');
+}
+
+
+if(1){
+    console.log('Es verdadero');
+}else{
+    console.log('Es falso');
+}
