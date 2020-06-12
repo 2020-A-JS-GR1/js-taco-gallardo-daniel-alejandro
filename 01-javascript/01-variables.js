@@ -69,3 +69,42 @@ if(1){
 }else{
     console.log('Es falso');
 }
+
+if(null){
+    console.log('Es verdadero');
+}else{
+    console.log('Es falso');
+}
+
+
+if(undefined){
+    console.log('Es verdadero');
+}else{
+    console.log('Es falso');
+}
+
+//Orden de IMPORTANCIA
+// 1) const
+// 2) let
+// 3) var -> jamas vamos a utilizar
+
+//Objetos Js (JSON) - Arreglos
+
+const daniel = {
+    nombre: 'Daniel',
+    apellido: 'Taco',
+    edad: 23,
+    hijos: null,
+    zapatos: undefined,
+    ropa:{
+        color:'negro',
+        talla: '40',
+    },
+    mascotas: ['gato','perro','conejo']
+}//object
+daniel.nombre;
+daniel.apellido;
+
+const arregloNumeros = [];//object
+console.log(daniel);
+console.log(arregloNumeros);
