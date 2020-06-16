@@ -100,11 +100,64 @@ const daniel = {
         color:'negro',
         talla: '40',
     },
-    mascotas: ['gato','perro','conejo']
-}//object
-daniel.nombre;
-daniel.apellido;
-
-const arregloNumeros = [];//object
+    mascotas: ['gato','perro','conejo'],
+}
+//object
+//Acceder  a las propiedades de un objeto
+daniel.nombre; //"Adrian"
+daniel.apellido; //"Taco"
+daniel["nombre"]; //"Adrian"
 console.log(daniel);
-console.log(arregloNumeros);
+daniel.nombre = "Vicente";
+console.log(daniel);
+daniel["nombre"] = "Daniel";
+console.log(daniel.sueldo);
+
+daniel.sueldo = 1.2;
+console.log("El sueldo es "+ daniel.sueldo);
+daniel['gastos'] = 0.8;
+console.log(daniel.gastos);
+daniel.nombre = undefined;
+console.log(daniel);
+delete daniel.nombre;
+console.log(daniel);
+
+//keys
+console.log(Object.keys(daniel));
+//values
+console.log(Object.values(daniel));
+
+
+//Lista de variables por valor JS
+//number
+//string
+//boolean
+//undefined
+let edadDaniel = 23;
+let edadAlejandro = edadDaniel;
+console.log(edadDaniel);
+console.log(edadAlejandro);
+edadDaniel = edadDaniel + 1;
+console.log(edadDaniel);
+console.log(edadAlejandro);
+
+//Lista de variables por REFERENCIA en JS
+let rafael ={
+    nombre:"Rafael",
+};
+let lenin = Object.assign( {},rafael );
+console.log(rafael);
+console.log(lenin);
+lenin.nombre = 'Lenin';
+delete rafael.nombre;
+console.log(rafael);
+console.log(lenin);
+
+
+
+
+
+
+// const arregloNumeros = [];//object
+// console.log(daniel);
+// console.log(arregloNumeros);
