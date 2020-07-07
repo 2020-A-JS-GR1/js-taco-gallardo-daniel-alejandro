@@ -35,9 +35,30 @@ const funcionNombradaOcho = x => x+1;
 const funcionNombradaNueve = (x,y,z) => x+y+z;
 
 //PARAMETROS INFINITOS
-function sumaNumeros(numeroInicial,...otrosNumeros) {
-    return numeroInicial + otrosNumeros.reduce((a,v) => a+v,0);
+function sumarNumeros(numeroInicial, // 1
+                      ...otrosNumeros) { // Parametros Inf [2,3,4,5,...]
+    numeroInicial; // 1
+    otrosNumeros; // [2, 3, 4, 5, 6, 7, 8, 9, 10]
+    let total = 0;
+    otrosNumeros.forEach(
+        (valorActual) => {
+            total = total + valorActual;
+        }
+    );
+    return numeroInicial + total;
+    // return numeroInicial + otrosNumeros.reduce((a, v) => a + v, 0);
 }
-sumaNumeros(1,2,3,4,5,6,7,8,9,10);
 
+// sumarNumeros(1,2,3,4,5,6,7,8,9,10);
+sumarNumeros(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
+const arreglo = [0, 1, 2];
+
+function sumarArreglo(arregloParametro) {
+    const clonArreglo = Object.assign([],arregloParametro);
+    clonArreglo[0] = 100;
+    return clonArreglo;
+}
+
+console.log(sumarArreglo(arreglo));
+console.log('arreglo', arreglo);
