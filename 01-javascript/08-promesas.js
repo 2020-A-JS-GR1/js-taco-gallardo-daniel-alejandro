@@ -23,7 +23,7 @@ function promesaElevarAlCuadrado(numero) {
     );
     return miPrimerPromesa
 }
-promesaEsPar(6)
+promesaEsPar(7)
     .then( // try
         (numeroPar) => {
             console.log('Contenido then', numeroPar);
