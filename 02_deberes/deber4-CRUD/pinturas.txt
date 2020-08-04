@@ -1,1 +1,1 @@
-[{"codigo":1,"codigoArtista":1,"nombre":"la mralla","precio":2342134.2,"restaurado":false},{"codigo":3,"codigoArtista":3,"nombre":"La monalisa","precio":322322222.4,"restaurado":true}]
+[{"codigo":1,"codigoArtista1":2,"nombre":"El renacimiento","precio":23123.2,"restaurado":true}]

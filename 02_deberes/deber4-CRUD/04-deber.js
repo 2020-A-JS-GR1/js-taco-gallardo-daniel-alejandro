@@ -83,7 +83,7 @@ async function insertar_inquirer() {
                 },
                 {
                     type: 'number',
-                    name: 'codigoArtista',
+                    name: 'codigoArtista1',
                     message: 'Lista de autores registrados en la base de datos: \n ' +
                         '1. Pablo Picasso \n' +
                         '2. Vincent Van Gogh \n' +

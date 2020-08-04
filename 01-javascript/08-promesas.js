@@ -23,24 +23,10 @@ function promesaElevarAlCuadrado(numero) {
     );
     return miPrimerPromesa
 }
-promesaEsPar(7)
+promesaEsPar(4)
     .then( // try
         (numeroPar) => {
             console.log('Contenido then', numeroPar);
-            /*
-            NO HACER ESTO
-            promesaEsPar(2)
-                .then( // try
-                    (contenido) => {
-                        console.log('Contenido then', contenido);
-                    }
-                )
-                .catch( // catch
-                    (error) => {
-                        console.error('Contenido catch', error);
-                    }
-                )
-            */
             return promesaElevarAlCuadrado(numeroPar) // promesa !
         }
     )
