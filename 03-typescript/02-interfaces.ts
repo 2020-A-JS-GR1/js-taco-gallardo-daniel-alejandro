@@ -34,3 +34,32 @@ const daniel: Usuario = {
     }
 };
 
+daniel.imprimirUsuario('fgdgfdf');
+daniel.calcularImpuesto(12);
+
+let f1 = function () {
+    return 'ok'
+}
+let f2 = () => {
+    return 'ok'
+}
+let objeto = {
+    f2: function () {
+
+    },
+    f4: () => {
+
+    }
+}
+
+let a = [];
+a.forEach(
+    function () {
+
+    }
+)
+a.forEach(
+    () => {
+
+    }
+)

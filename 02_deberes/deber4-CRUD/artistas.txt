@@ -1,0 +1,4 @@
+[{"codigoArtista": 1, "nombreArtista": "Pablo Picasso"},
+{"codigoArtista": 2, "nombreArtista": "Vincent Van Gogh"},
+{"codigoArtista": 3, "nombreArtista": "Leonardo da Vinci"},
+{"codigoArtista": 4, "nombreArtista": "Miguel Angel"}]
