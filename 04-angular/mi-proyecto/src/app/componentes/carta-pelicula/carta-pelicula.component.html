@@ -1,0 +1,11 @@
+<img [src]="urlImagen" alt=""
+     (click)="ejecutarEventoDioImagen()"
+>
+<a [href]="linkTextoEjemplo">
+  <p>{{descripcion}}</p>
+</a>
+<button
+  (click)="ejecutarEventoDioClic()"
+  (blur) ="eventoOnBlur()"
+>{{nombreBoton}}
+</button>
