@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UsuarioService} from "./servicios/http/usuario.service";
 
 @Component({
@@ -6,8 +6,10 @@ import {UsuarioService} from "./servicios/http/usuario.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'mi-proyecto';
+  habilitado = true;
+
   arregloNumeros = [1,2,3]
 
   arregloPeliculas = [
@@ -37,11 +39,18 @@ export class AppComponent {
     },
 
   ]
+
+  arregloUsuarios = [];
+
 // Inyectar Dependencias
   constructor(
     private readonly _usuarioService: UsuarioService
   ) {
   }
+  ngOnInit() {
+    this.mensajeConsola(true);
+  }
+
   mensajeConsola(objeto: boolean) {
     console.log('Llego el evento', objeto);
     const observableTraerTodos = this._usuarioService.traerTodos();
@@ -54,6 +63,26 @@ export class AppComponent {
           console.log(error);
         }
       );
+  }
+
+  crearUsuario() {
+    const usuarioNuevo = {
+      cedula: '1231231255',
+      nombre: 'Naruto',
+      apellido: 'Uzumaki'
+    };
+    const obsCrearUsuario = this._usuarioService
+      .crear(usuarioNuevo);
+    obsCrearUsuario
+      .subscribe(
+        (datos) => {
+          console.log('Nuevo Usuario', datos)
+          this.mensajeConsola(true);
+        },
+        (error) => {
+          console.error('Error', error);
+        }
+      )
   }
 
 }

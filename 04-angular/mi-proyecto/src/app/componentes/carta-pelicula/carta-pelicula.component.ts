@@ -31,7 +31,15 @@ export class CartaPeliculaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('INIT');
+    // Logica Inicial del componente
   }
+
+  ngOnDestroy(): void {
+    console.log('Destroy');
+    // Dessuscribimos de todos las suscripciones
+  }
+
 
   ejemploFuncion(){
     alert('Hola')
