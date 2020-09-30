@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {UsuarioService} from "../../servicios/http/usuario.service";
-import {Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {UsuarioService} from '../../servicios/http/usuario.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-ruta-lista-usuario',
@@ -8,27 +8,22 @@ import {Router} from "@angular/router";
   styleUrls: ['./ruta-lista-usuario.component.css']
 })
 export class RutaListaUsuarioComponent implements OnInit {
-  arregloUsuarios=[];
-  constructor(    private readonly _usuarioService: UsuarioService,
-  private readonly _router: Router) {
+
+  arregloUsuarios = [];
+  busquedaModelo = '';
+
+  constructor( // Inyecta dependendicas
+    private readonly _usuarioService: UsuarioService,
+    private readonly _router: Router
+  ) {
+
   }
 
-  ngOnInit(): void {
-    const observableTraerTodos = this._usuarioService.traerTodos();
-    observableTraerTodos
-      .subscribe(
-        (usuarios: any[]) => {
-          this.arregloUsuarios = usuarios
-        },
-        (error) => {
-          console.error('Error', error)
-        }
-      )
-  }
 
-  irAEditarUsuario(id:number) {
+  irAEditarUsuario(id: number) {
     const ruta = ['/usuario', 'editar', id];
-    this._router.navigate(ruta)
+    // /usuario/editar/1
+    this._router.navigate(ruta);
   }
 
   eliminarUsuario(id: number) {
@@ -37,7 +32,7 @@ export class RutaListaUsuarioComponent implements OnInit {
     obsEliminar
       .subscribe(
         () => {
-// Borrando de la interfaz
+          // Borrando de la interfaz
           const indice = this.arregloUsuarios
             .findIndex(u => u.id === id);
           this.arregloUsuarios.splice(indice, 1);
@@ -47,4 +42,41 @@ export class RutaListaUsuarioComponent implements OnInit {
         }
       );
   }
+
+  ngOnInit(): void {
+    this.filtrarArreglo();
+  }
+
+  filtrarArreglo() {
+    const consulta = {
+      or: [
+        {
+          nombre: {
+            contains: this.busquedaModelo
+          }
+        },
+        {
+          cedula: {
+            contains: this.busquedaModelo
+          }
+        }
+      ]
+    }
+    const consultaString = 'where=' + JSON.stringify(consulta)
+
+    const observableTraerTodos = this._usuarioService
+      .traerTodos(this.busquedaModelo != '' ? consultaString : '');
+    observableTraerTodos
+      .subscribe(
+        (usuarios: any[]) => {
+          this.arregloUsuarios = usuarios;
+        },
+        (error) => {
+          console.error('Error', error);
+        }
+      )
+
+  }
+
 }
+
